@@ -13,7 +13,7 @@
                         <a href="/posts/{{ $post->id }}">{{ $post->title }} </a>
                     </h2>
                     <p class="lead">
-                        by <a href="#">Carlos Marx</a>
+                        by <a href="#">{{$post->user->name}}</a>
                     </p>
                     <p><span class="glyphicon glyphicon-time"></span> Posted on {{-- August 28, 2013 at 10:00 PM --}} {{ $post->created_at }}</p>
                     <hr>

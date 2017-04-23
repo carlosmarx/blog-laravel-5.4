@@ -43,8 +43,6 @@
 
                 @yield('content')
 
-                
-
             </div>
 
             <!-- Blog Sidebar Widgets Column -->

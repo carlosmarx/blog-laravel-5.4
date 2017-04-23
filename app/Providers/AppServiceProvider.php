@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        view()->composer('layouts.partials.right-bar', function($view){
+            $view->with('archives', \App\Post::archives());
+        });
     }
 }

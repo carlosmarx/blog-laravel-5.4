@@ -14,6 +14,26 @@
                     <!-- /.input-group -->
                 </div>
 
+                {{-- Blog archives well --}}
+                <div class="well">
+                    <h4>Blog Archives</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="list-unstyled">
+                            @foreach($archives as $archive)
+                                <li>
+                                    <a href="/?month={{ $archive['month'] }}&year={{ $archive['year'] }}">
+                                        {{$archive['month'].' '.$archive['year']}}
+                                    </a>
+                                </li>
+                            @endforeach
+                            </ul>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+
                 <!-- Blog Categories Well -->
                 <div class="well">
                     <h4>Blog Categories</h4>
