@@ -18,6 +18,8 @@ class RegistrationController extends Controller
       
       $form->persist();
 
+      session()->flash('message', 'Thanks for you registration.');
+
       return redirect()->home();
     }
 }

@@ -40,6 +40,12 @@
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
+            
+            @if($flash = session('message'))
+                <div class="alert alert-success" role="alert">
+                    <p>message: {{ $flash }}</p>    
+                </div>
+            @endif
 
                 @yield('content')
 

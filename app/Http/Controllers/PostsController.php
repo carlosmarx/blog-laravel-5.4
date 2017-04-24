@@ -18,7 +18,6 @@ class PostsController extends Controller
 
     public function index()
     {
-     
      $posts = $this->postsRepository->index();
 
       return view('posts.index', compact('posts'));
