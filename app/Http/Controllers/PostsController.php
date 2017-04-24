@@ -3,22 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Repositories\Posts;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    public function __construct()
+    public function __construct(Posts $posts)
     {
       $this->middleware('auth')->except(['index', 'show']);
+
+      $this->postsRepository = $posts; 
     }
 
     public function index()
     {
-      $posts = Post::latest()
-      ->filter(request(['month', 'year']))
-      ->get();
-      
+     
+     $posts = $this->postsRepository->index();
+
       return view('posts.index', compact('posts'));
     }
 
