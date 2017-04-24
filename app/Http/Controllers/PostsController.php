@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use App\Repositories\Posts;
+use App\Repositories\PostsRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    public function __construct(Posts $posts)
+    public function __construct(PostsRepository $posts)
     {
       $this->middleware('auth')->except(['index', 'show']);
 
@@ -18,7 +18,7 @@ class PostsController extends Controller
 
     public function index()
     {
-     $posts = $this->postsRepository->index();
+      $posts = $this->postsRepository->index();
 
       return view('posts.index', compact('posts'));
     }

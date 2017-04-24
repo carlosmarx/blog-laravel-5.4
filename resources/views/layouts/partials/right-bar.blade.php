@@ -34,6 +34,26 @@
                     <!-- /.row -->
                 </div>
 
+                {{-- Blog tags well --}}
+                <div class="well">
+                    <h4>Blog Tags</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="list-unstyled">
+                            @foreach($tags as $tag)
+                                <li>
+                                    <a href="/posts/tags/{{$tag}}">
+                                        {{ $tag }}
+                                    </a>
+                                </li>
+                            @endforeach
+                            </ul>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+
                 <!-- Blog Categories Well -->
                 <div class="well">
                     <h4>Blog Categories</h4>

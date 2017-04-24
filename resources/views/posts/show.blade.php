@@ -4,6 +4,15 @@
   <h2>
     {{ $post->title }}
   </h2>
+
+  @if(count($post->tags))
+    <ul>
+    @foreach($post->tags as $tag)
+      <li><a href="/posts/tags/{{ $tag->name }}">{{ $tag->name }}</a></li>
+    @endforeach
+    </ul>
+  @endif
+
   <p class="lead">
     by <a href="#">Carlos Marx</a>
   </p>

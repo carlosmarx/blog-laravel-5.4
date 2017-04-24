@@ -4,10 +4,7 @@ namespace App\Repositories;
 
 use App\Post;
 
-/**
-* 
-*/
-class Posts
+class PostsRepository
 {
   public function index()
   {
